@@ -1,6 +1,6 @@
 
-function customLog(text,
-    params = {
+function log(text,
+                 params = {
 
       color: 'black',
       size: '12'
@@ -37,10 +37,3 @@ function badge(
       text)
 
 }
-
-customLog('Hello World', {
-  color: 'red',
-  size: "16"
-});
-console.log('Hello World');
-badge('JsStyle', 'Hello World')
