@@ -23,6 +23,7 @@ function badge(badgeText, text, badgeParams = {
         text)
 }
 function shieldsIo(text1, text2, badgeParams = {
+    height: '1',
     bgColor1: '#555555',
     bgColor2: '#97ca00',
     textColor1: 'white',
@@ -30,11 +31,16 @@ function shieldsIo(text1, text2, badgeParams = {
     borderRadiusTopLeft: '0',
     borderRadiusTopRight: '0',
     borderRadiusBottomLeft: '0',
-    borderRadiusBottomRight: '0'
+    borderRadiusBottomRight: '0',
+    paddingTop: '11',
+    paddingBottom: '10',
+    paddingLeft: '12',
+    paddingRight: '12'
 }) {
     console.log('%c' + text1 + "%c" + text2,
         //part 1
         'background: ' + badgeParams.bgColor1 + ";" +
+        'height: ' + badgeParams.height + "px;" +
         'color: ' + badgeParams.textColor1 + ';' +
         'padding-top: 11px; padding-bottom: 10px; padding-left: 12px; padding-right: 12px;' +
         'border-radius: ' + badgeParams.borderRadiusTopLeft + 'px 0 0 ' + badgeParams.borderRadiusBottomLeft + 'px;',
@@ -45,4 +51,8 @@ function shieldsIo(text1, text2, badgeParams = {
         'padding-top: 11px; padding-bottom: 10px; padding-left: 12px; padding-right: 12px;' +
         'border-radius: 0 ' + badgeParams.borderRadiusTopRight + 'px ' + badgeParams.borderRadiusBottomRight + 'px 0;'
     )
+}
+
+function customCss(text, css) {
+    console.log('%c' + text, css);
 }
