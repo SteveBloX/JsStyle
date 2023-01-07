@@ -1,9 +1,22 @@
 
 function log(text, params = {
-    color: 'black',
-    size: '12'
-}) {
-    console.log('%c' + text, 'color: ' + params.color + "; font-size: " + params.size + "px;");
+        textColor: 'black',
+        backgroundColor: 'white',
+        textSize: '12'
+    }) {
+    var parameters = "";
+    for (const [param, paramV] of Object.entries(params)){
+        if(param === "textColor"){
+            parameters += "color: " + paramV + ";";
+        }
+        if(param === "backgroundColor"){
+            parameters += "background-color: " + paramV + ";";
+        }
+        if(param === "textSize"){
+            parameters += "font-size: " + paramV + "px;";
+        }
+    }
+    console.log('%c' + text, parameters);
 }
 
 function badge(badgeText, text, badgeParams = {
@@ -13,14 +26,33 @@ function badge(badgeText, text, badgeParams = {
     borderRadius: '50',
     backgroundColor: 'orange'
 }) {
-    console.log('%c' + badgeText,
+    var parameters = "";
+    for (const [param, paramV] of Object.entries(badgeParams)){
+        if(param === "color"){
+            parameters += "color: " + paramV + ";";
+        }
+        if(param === "size"){
+            parameters += "font-size: " + paramV + "px;";
+        }
+        if(param === "borderColor"){
+            parameters += "border-color: " + paramV + ";";
+        }
+        if(param === "borderRadius"){
+            parameters += "border-radius: " + paramV + "px;";
+        }
+        if(param === "backgroundColor"){
+            parameters += "background-color: " + paramV + ";";
+        }
+    }
+    console.log('%c' + badgeText + "%c" + text, parameters);
+    /*console.log('%c' + badgeText,
         'border: 2px solid ' + badgeParams.borderColor +
         ';color: ' + badgeParams.color +
         "; font-size: " + badgeParams.size +
         "px; background-color: " + badgeParams.backgroundColor +
         ";border-radius:" + badgeParams.borderRadius +
         "px;padding-left:4px;padding-right:4px;padding-top:1px;padding-bottom:1px;",
-        text)
+        text)*/
 }
 function shieldsIo(text1, text2, badgeParams = {
     height: '1',
